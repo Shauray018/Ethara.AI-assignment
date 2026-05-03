@@ -86,17 +86,6 @@ export const api = {
     request<{ users: User[] }>("/users", {
       token,
     }),
-  dashboard: (token: string) =>
-    request<{
-      summary: {
-        projects: number
-        tasks: number
-        overdue: number
-        statusCounts: Record<TaskStatus, number>
-      }
-      overdueTasks: Task[]
-      recentTasks: Task[]
-    }>("/dashboard", { token }),
   projects: (token: string) =>
     request<{ projects: Project[] }>("/projects", {
       token,
@@ -112,6 +101,22 @@ export const api = {
   ) =>
     request<{ project: Project }>("/projects", {
       method: "POST",
+      token,
+      body,
+    }),
+  updateProject: (
+    token: string,
+    projectId: string,
+    body: Partial<{
+      name: string
+      description: string | null
+      dueDate: string | null
+      ownerId: string
+      memberIds: string[]
+    }>
+  ) =>
+    request<{ project: Project }>(`/projects/${projectId}`, {
+      method: "PATCH",
       token,
       body,
     }),
@@ -146,7 +151,8 @@ export const api = {
     taskId: string,
     body: Partial<{
       title: string
-      description: string
+      description: string | null
+      projectId: string
       assigneeId: string | null
       dueDate: string | null
       status: TaskStatus

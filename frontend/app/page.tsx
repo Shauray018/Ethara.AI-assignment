@@ -1,5 +1,5 @@
-import { WorkspaceApp } from "@/components/workspace-app"
+import { AuthScreen } from "@/components/auth-screen"
 
 export default function Page() {
-  return <WorkspaceApp />
+  return <AuthScreen />
 }

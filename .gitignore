@@ -1,0 +1,6 @@
+# Backend local artifacts
+backend/node_modules/
+backend/.env
+
+# Prisma local env variants
+backend/.env.*

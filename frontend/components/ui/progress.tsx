@@ -8,7 +8,7 @@ function Progress({
   value: number
 }) {
   return (
-    <div className={cn("h-2 overflow-hidden rounded-full bg-muted", className)}>
+    <div className={cn("h-2 overflow-hidden rounded-full bg-primary/20", className)}>
       <div
         className="h-full rounded-full bg-primary transition-all"
         style={{ width: `${Math.max(0, Math.min(100, value))}%` }}

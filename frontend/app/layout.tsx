@@ -2,6 +2,8 @@ import { DM_Sans, Geist_Mono } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Toaster } from "@/components/ui/sonner"
+import { WorkspaceProvider } from "@/components/workspace-provider"
 import { cn } from "@/lib/utils"
 
 const fontSans = DM_Sans({
@@ -26,7 +28,10 @@ export default function RootLayout({
       className={cn("antialiased", fontSans.variable, fontMono.variable)}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <WorkspaceProvider>{children}</WorkspaceProvider>
+          <Toaster richColors closeButton />
+        </ThemeProvider>
       </body>
     </html>
   )
