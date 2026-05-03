@@ -1,21 +1,31 @@
-# Next.js template
+# Frontend
 
-This is a Next.js template with shadcn/ui.
+Next.js frontend for the Ethara assignment.
 
-## Adding components
+## Stack
 
-To add components to your app, run the following command:
+- Next.js
+- React
+- TypeScript
+- shadcn/ui
+
+## Run locally
 
 ```bash
-npx shadcn@latest add button
+cd frontend
+npm install
 ```
 
-This will place the ui components in the `components` directory.
+Create `frontend/.env.local`:
 
-## Using components
-
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button";
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5000/api
 ```
+
+Start the app:
+
+```bash
+npm run dev
+```
+
+Runs on `http://localhost:3000`.
