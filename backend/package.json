@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
+    "postinstall": "prisma generate",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio"
@@ -20,11 +21,11 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.16.3",
+    "prisma": "^7.0.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
-    "nodemon": "^3.1.10",
-    "prisma": "^7.0.0"
+    "nodemon": "^3.1.10"
   }
 }
